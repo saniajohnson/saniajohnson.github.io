@@ -242,24 +242,30 @@
             }
         }
 
-        /* ── Custom color palette ── */
+        /* ── Custom dusty-rose color palette ── */
         :root {
-            --sidebar:    #0A3D66;
-            --header:     #0F4C81;
-            --accent:     #1D70B8;
-            --background: #ECEFF1;
-            --card:       #FFFFFF;
+            --sidebar-primary:   #B76E79;
+            --sidebar-secondary: #9D5C68;
+            --background:        #FFF8FA;
+            --card-background:   #FFFFFF;
+            --accent:            #C86B85;
+            --accent-hover:      #AD5D75;
+            --heading:           #3B3033;
+            --text:              #5A4A4F;
+            --text-muted:        #88747A;
+            --border:            #E8DADD;
+            --soft-pink:         #F9E9EE;
         }
 
-        /* Sidebar background (indigo-700 in MDL) */
+        /* Sidebar main background */
         .mdl-color--indigo-700 {
-            background-color: var(--sidebar) !important;
+            background-color: var(--sidebar-secondary) !important;
         }
-        /* Title strip background (indigo-500 in MDL) */
+        /* Sidebar title / top header section */
         .mdl-color--indigo-500 {
-            background-color: var(--header) !important;
+            background-color: var(--sidebar-primary) !important;
         }
-        /* Accent text on cards (indigo-500 text) */
+        /* Accent text on cards (titles, links) */
         .mdl-color-text--indigo-500 {
             color: var(--accent) !important;
         }
@@ -269,23 +275,57 @@
         }
         /* Card sections */
         .mdl-color--white {
-            background-color: var(--card) !important;
+            background-color: var(--card-background) !important;
+            border: 1px solid var(--border);
+            box-shadow: 0 3px 12px rgba(157, 92, 104, 0.10) !important;
         }
-        /* FAB / MDL colored button */
+        /* Headings and typography colors inside main content */
+        body > div > main h2 {
+            color: var(--heading) !important;
+        }
+        body > div > main p,
+        body > div > main ul {
+            color: var(--text);
+        }
+        body > div > main .mdl-typography--subhead-color-contrast,
+        body > div > main .mdl-typography--body-1-color-contrast,
+        body > div > main .mdl-typography--caption-color-contrast {
+            color: var(--text-muted) !important;
+        }
+        body > div > main a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        body > div > main a:hover {
+            color: var(--accent-hover);
+        }
+
+        /* Floating action button (FAB) */
+        body > a.fab-btn,
         .mdl-button--colored,
         .mdl-button--colored:focus:not(:active) {
-            background-color: #F5C518 !important;
-            color: #1a1a1a !important;
+            background-color: var(--accent) !important;
+            color: #FFFFFF !important;
+            box-shadow: 0 3px 10px rgba(157, 92, 104, 0.35) !important;
+        }
+        body > a.fab-btn:hover {
+            background-color: var(--accent-hover) !important;
+        }
+        body > a.fab-btn i {
+            color: #FFFFFF !important;
         }
 
         /* Certificate links */
         .cert-link {
             display: inline-block;
             margin-top: 12px;
+            color: var(--accent) !important;
             text-decoration: none;
             font-size: 14px;
         }
         .cert-link:hover {
+            color: var(--accent-hover) !important;
             text-decoration: underline;
         }
         .cert-link-icon {
